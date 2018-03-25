@@ -53,10 +53,16 @@
 								<li><a href="#intro">Intro</a></li>
 								<li><a href="#about">the team</a></li>
 								<li><a href="https://facebook.com/teamsuccmore/">facebook</a></li>
-								<li><a href="#calc">Tools</a></li>
 								<!--<li><a href="#elements">Elements</a></li>-->
 							</ul>
 						</nav>
+                        
+                        <nav>
+                            <ul>
+                            	<li><a href="#calc">turn one brigette</a></li>
+                                <li><a href="#sm6">sm6 deck lists</a></li>
+                            </ul>
+                        </nav>
 					</header>
 
 				<!-- Main -->
@@ -114,7 +120,7 @@
                                         </div>
                                         <div class="col-sm-8">
                                             <h3>jake "reeee" bragdon</h3>
-                                            <p>Plays Espeon Garb at everything, topped 6 City Championships with Machamp Ariados, premier writer for Succ Deck Sunday.</p>
+                                            <p>Plays Espeon Garb at everything, topped 6 City Championships with Machamp Ariados, won 3 Chris's Twelve Oaks tournaments, premier writer for Succ Deck Sunday.</p>
                                         </div>
                                     </div>
 
@@ -143,22 +149,38 @@
                         <article id="calc">
                             <div ng-app="app" ng-controller="ctrl" id="angular">
                                 <h2 class="major">Turn One Brigette</h2>
-                                <div class="input-field">
-                                    <input id="brigette" type="text" ng-model="brigette">
-                                    <label for="brigette">Number of Brigette</label>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="input-field">
+                                                <input id="brigette" type="text" ng-model="brigette">
+                                                <label for="brigette">Number of Brigette</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-field">
+                                                <input id="lele" type="text" ng-model="lele">
+                                                <label for="lele">Number of Tapu Lele-GX</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="input-field">
+                                                <input id="ball" type="text" ng-model="ball">
+                                                <label for="ball">Number of Ultra Ball</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-field">
+                                                <input id="myst" type="text" ng-model="myst">
+                                                <label for="myst">Number of Mystery Treasure</label>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="input-field">
-                                    <input id="lele" type="text" ng-model="lele">
-                                    <label for="lele">Number of Tapu Lele-GX</label>
-                                </div>
-                                <div class="input-field">
-                                    <input id="ball" type="text" ng-model="ball">
-                                    <label for="ball">Number of Ultra Ball</label>
-                                </div>
-                                <div class="input-field">
-                                    <input id="myst" type="text" ng-model="myst">
-                                    <label for="myst">Number of Mystery Treasure</label>
-                                </div>
+                                
                                 <h1>{{total(0)}}% chance</h1>
                                 <h3>you'll have an out to a turn one Brigette</h3>
                                 <br>
@@ -167,9 +189,22 @@
                                 <br>
                             </div>
                             <footer>Original code <a href="https://github.com/comp0cker/turn-one">open-sourced.</a></footer>
-                        </article>
-                        
+                        </article >
 
+                        <article id="sm6">
+                            <h2 class="major">SM6 deck lists</h2>
+                            <h3>Buzzwole Lycanroc</h3>
+                            <span class="image main"><img src="images/sm6/buzz%20lyc.png"></span>
+                            
+                            <h3><br>Ultra Necrozma Malamar</h3>
+                            <span class="image main"><img src="images/sm6/necrozma%20malamar.png"></span>
+                            
+                            <h3><br>Rainbow soup (tm taste llc)</h3>
+                            <span class="image main"><img src="images/sm6/rainbow%20soup.png"></span>
+                            
+                            <h3><br>greninja zoroark</h3>
+                            <span class="image main"><img src="images/sm6/ninja%20zoro.png"></span>
+                        </article>
 					</div>
 
 				<!-- Footer -->
