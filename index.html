@@ -20,7 +20,7 @@
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         
-        <script src="assets/js/source.js"></script>
+        <script src="assets/js/hypergeo.js"></script>
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -37,7 +37,7 @@
         <img src="images/cover%20photo.png" style="display: none">
 
 		<!-- Wrapper -->
-			<div id="wrapper">
+			<div id="wrapper" ng-app="app" ng-controller="ctrl" id="angular">
 
 				<!-- Header -->
 					<header id="header">
@@ -59,8 +59,10 @@
                         
                         <nav>
                             <ul>
-                            	<li><a href="#calc">turn one brigette</a></li>
+                            	<li><a href="#calc">turn one</a></li>
+                                <li><a href="#prizes">prizes</a></li>
                                 <li><a href="#sm6">sm6 deck lists</a></li>
+                                <li><a href="#resources">resources</a></li>
                             </ul>
                         </nav>
 					</header>
@@ -77,7 +79,7 @@
                                 
                                 <p>You can check us out <a href="https://www.facebook.com/teamsuccmore">at our Facebook</a>, where we post everything mentioned above. </p>
                                 
-                                <p>We're more than happy to answer any questions, give deck advice, or anything else you have on your mind. You can contact us by <a href="https://www.facebook.com/teamsuccmore">shooting us a Facebook message</a> by clicking Send Message at the link.</a></p>
+                                <p>We're more than happy to answer any questions, give deck advice, or anything else you have on your mind. You can contact us by <a href="https://www.facebook.com/teamsuccmore">shooting us a Facebook message</a> by clicking Send Message at the link.</p>
 							</article>
 
 						<!-- Work -->
@@ -146,9 +148,98 @@
                                     </div>
 							</article>
                         
+                             <article id="sm6">
+                                <h2 class="major">SM6 deck lists</h2>
+                                 
+                                <h3>Naganadel Buzzwole</h3>
+                                <span class="image main"><img src="images/sm6/beast%20box.png"></span><br>
+                                 
+                                <h3>Buzzwole Lycanroc</h3>
+                                <span class="image main"><img src="images/sm6/buzz%20lyc.png"></span>
+
+                                <h3><br>Ultra Necrozma Malamar</h3>
+                                <span class="image main"><img src="images/sm6/necrozma%20malamar.png"></span>
+
+                                <h3><br>Rainbow soup (tm taste llc)</h3>
+                                <span class="image main"><img src="images/sm6/rainbow%20soup.png"></span>
+
+                                <h3><br>greninja zoroark</h3>
+                                <span class="image main"><img src="images/sm6/ninja%20zoro.png"></span>
+                            </article>
+                        
+                        <article id="resources">
+                            <h2 class="major">Resources</h2>
+                            
+                            <h3>Japanese sites</h3>
+                            <a href="http://www.houhou-news.com/">Houhou News</a>
+                            <span> + </span>
+                            <a href="https://pokead.jp/">PokeAd</a>
+                            <span>- Collection of Twitter updates of winning decks around Japan</span><br>
+                            <a href="http://hodohodo.diarynote.jp/">Hodo Hodo</a> - Tournament reports around Japan<br>
+                            <a href="http://www.pokemon-card.com/recipe/decks/">Official Pokemon Japan Deck Lists</a> - Lists that topped Regionals, Nationals, and more<br>
+                            <a href="https://www.pokemon-card.com/deck/deck.html">Deck List Creator</a> - Creates an image of a deck, preferable for future format<br>
+                            <a href="https://twitter.com/Pokemon_cojp">Official Pokemon Card Japanese Twitter</a> - Posts new cards right when they come out<br>
+                            <a href="https://www.youtube.com/channel/UCysOBNRW0rEmLtFptj1TN7A">Official Pokemon Card Japanese YouTube</a> - Occasional new cards, deck battles<br><br>
+                            
+                            <h3>Deck profiles + Tournament reports</h3>
+                            <a href="https://some1spc.com/">Some1s PC</a> + 
+                            <a href="https://sixprizes.com/">Six Prizes</a> + 
+                            <a href="http://www.60cards.net/">60 Cards</a> - All excellent news sources for everything Pokemon TCG, with insight from top players, deck profiles, and tournament reports.<br>
+                            <a href="http://pokebeach.net">PokeBeach</a> - Posts news articles as well as regular updates on new cards, and products<br><br>
+                            
+                            <h3>Proxies</h3>
+                            <a href="https://proxycroak.com/">ProxyCroak</a> - Prints proxies by card lookup<br>
+                            <a href="https://pkmncards.com/">PkmnCards</a> - Lookup by card, provides high-resolution images<br><br>
+                            
+                            <h3>Tournaments</h3>
+                            <a href="https://www.rk9labs.com/">RK9 Labs</a> - Register deck lists for most Regionals here, deck storage system, and more<br>
+                            <a href="http://compendium.pokegym.net/compendium-bw.html">PokeGym Compendium</a> - Ruling compendium for the TCG<br>
+                            <a href="http://limitlesstcg.com/">Limitless TCG</a> - Decks of top players, tournament results, and more
+                        </article>
+                        
+                        <article id="prizes">
+                            <h2 class="major">Prize Calculators</h2>
+                            
+                            <h2>odds of prizing a card</h2>
+                            <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="input-field">
+                                                <input id="numPrize" type="text" ng-model="numPrize">
+                                                <label for="numPrize">Number Prized</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-field">
+                                                <input id="numPlayed" type="text" ng-model="numPlayed">
+                                                <label for="numPlayed">Number you play</label>
+                                            </div>
+                                        </div>
+                            </div>
+                            <h3>{{prized()}}% it's prized</h3>
+                            <p>Number prized must be less than number played.</p>
+                            
+                            <h2>odds of getting out stage 1</h2>
+                            <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="input-field">
+                                                <input id="basic" type="text" ng-model="basic">
+                                                <label for="basic">Number of Basics</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="input-field">
+                                                <input id="stageone" type="text" ng-model="stageone">
+                                                <label for="stageone">Number of Stage Ones</label>
+                                            </div>
+                                        </div>
+                            </div>
+                            <h3>{{outsStageOne()}}</h3>
+                            
+                        </article>
+                        
                         <article id="calc">
-                            <div ng-app="app" ng-controller="ctrl" id="angular">
                                 <h2 class="major">Turn One Brigette</h2>
+                                <p>Calculates the probability of getting a Brigette turn one.</p>
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-md-6">
@@ -183,28 +274,12 @@
                                 
                                 <h1>{{total(0)}}% chance</h1>
                                 <h3>you'll have an out to a turn one Brigette</h3>
-                                <br>
-                                <h3>{{total(1)}}% chance you'll get it with one more out</h3>
-                                <h3>{{total(-1)}}% chance you'll get it with one less out</h3>
-                                <br>
-                            </div>
-                            <footer>Original code <a href="https://github.com/comp0cker/turn-one">open-sourced.</a></footer>
-                        </article >
+                                <h3>{{total(1)}}% chance ({{(total(1) - total(0)).toFixed(2)}}% more) with one more out</h3>
+                                <h3>{{total(-1)}}% chance ({{-(total(0) - total(1)).toFixed(2)}}% less) with one less out</h3>
 
-                        <article id="sm6">
-                            <h2 class="major">SM6 deck lists</h2>
-                            <h3>Buzzwole Lycanroc</h3>
-                            <span class="image main"><img src="images/sm6/buzz%20lyc.png"></span>
-                            
-                            <h3><br>Ultra Necrozma Malamar</h3>
-                            <span class="image main"><img src="images/sm6/necrozma%20malamar.png"></span>
-                            
-                            <h3><br>Rainbow soup (tm taste llc)</h3>
-                            <span class="image main"><img src="images/sm6/rainbow%20soup.png"></span>
-                            
-                            <h3><br>greninja zoroark</h3>
-                            <span class="image main"><img src="images/sm6/ninja%20zoro.png"></span>
-                        </article>
+                            <p>Note: One less out does not account for setting a parameter to 0.</p>
+                        </article >
+        
 					</div>
 
 				<!-- Footer -->
